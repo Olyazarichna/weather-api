@@ -1,7 +1,6 @@
 // const axios = require('axios').default;
 
 const key = "a98d70d03d8de2cdd126f4062901ce92";
-let city = "";
 
 const formEl = document.querySelector(".form");
 const inputEl = document.querySelector(".search-field");
@@ -13,24 +12,24 @@ formEl.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
-  // let city = inputEl.value;
+  let city = inputEl.value;
 
-  // if (!city) {
-  //   return;
-  // }
+  if (!city) {
+    return;
+  }
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
 
-  // cityName.innerHTML = city;
+  cityName.innerHTML = city;
 
   axios.get(url).then(showWeather);
   event.currentTarget.reset();
 }
 
 function showWeather(response) {
-  if(!response.data.name) {
+  if (!response.data.name) {
     return;
-  } 
-  
+  }
+
   let temp = Math.round(response.data.main.temp);
   const tempEl = document.querySelector(".text-title");
   tempEl.innerHTML = temp;
@@ -44,7 +43,7 @@ function showWeather(response) {
   let wind = response.data.wind.speed;
   const windEl = document.querySelector(".wind");
   cityName.innerHTML = response.data.name;
-  windEl.innerHTML = ` Wind speed: ${wind}`;
+  windEl.innerHTML = `Wind speed: ${wind}`;
   console.log(temp);
 }
 
