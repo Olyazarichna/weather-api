@@ -7,12 +7,11 @@ const inputEl = document.querySelector(".search-field");
 const cityName = document.querySelector(".city-name");
 const currentLoc = document.querySelector(".location");
 const iconEl = document.querySelector(".icon-title");
-const temperature = document.querySelector(".text-title");
+const temperatureEL = document.querySelector(".text-title");
 const divEl = document.querySelector(".wrapper");
 const tempCel = document.querySelector(".tempC");
 const tempFahr = document.querySelector(".tempF");
 
-console.log(tempCel);
 
 formEl.addEventListener("submit", onFormSubmit);
 
@@ -27,24 +26,37 @@ function onFormSubmit(event) {
 }
 
 function showWeather(response) {
-  console.log(response.data);
   cityName.innerHTML = response.data.name;
   let temp = Math.round(response.data.main.temp);
-  temperature.innerHTML = temp;
-  if (temp >= 20) {
+  temperatureEL.innerHTML = temp;
+  let description = response.data.weather[0].description;
+  if (description === 'snow') {
+    iconEl.innerHTML = "❄️";
+  }  else if (description === 'clouds') {
+    iconEl.innerHTML = "🌥";
+  }   else if (description === 'clear') {
     iconEl.innerHTML = "☀️";
-  } else if (temp < 0) {
-    iconEl.innerHTML = "☃️";
-  } else if (temp > 5 && 19) {
+  } else if (description === 'rain') {
+    iconEl.innerHTML = "🌧";
+  }else if (description === 'thunderstorm') {
+    iconEl.innerHTML = "⛈";
+  }else if (description === 'clear sky') {
+    iconEl.innerHTML = "☀️";
+  }else if (description === ' scattered clouds') {
+    iconEl.innerHTML = "☁️";
+  } else if (description === 'overcast clouds') {
+    iconEl.innerHTML = "☁️";
+  } else {
     iconEl.innerHTML = "🌥";
   }
+
   const windEl = document.querySelector(".wind");
   const humidity = document.querySelector(".humidity");
   const descriptionEl = document.querySelector(".descritpion");
   cityName.innerHTML = response.data.name;
   setTime();
 
-  let description = response.data.weather[0].description;
+  
   descriptionEl.innerHTML = description.toUpperCase();
   windEl.innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
@@ -55,14 +67,14 @@ function showWeather(response) {
 
   tempFahr.addEventListener("click", (event) => {
     event.preventDefault();
-    temperature.innerHTML = tempF;
+    temperatureEL.innerHTML = tempF;
     tempCel.classList.remove('active');
     tempFahr.classList.add('active');
   });
 
   tempCel.addEventListener("click", (event) => {
     event.preventDefault();
-    temperature.innerHTML = temp;
+    temperatureEl.innerHTML = temp;
     tempFahr.classList.remove('active');
     tempCel.classList.add('active');
 
