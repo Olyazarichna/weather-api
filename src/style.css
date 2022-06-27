@@ -62,10 +62,24 @@ input::placeholder {
   font-weight: 700;
   line-height: 1.33;
 }
+
 .wrapper {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
   margin-bottom: 15px;
+}
+.info{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.temp-list{
+  display: flex;
+  position: absolute;
+  top:25px;
+  right: -50px;
 }
 .icon-title,
 .text-title {
@@ -86,6 +100,10 @@ input::placeholder {
   font-weight: 900;
   color: rgb(238, 157, 8);
 }
+/* .desc {
+margin-left: 50px;
+} */
+
 .desc-list{
   font-size: 16px;
 }

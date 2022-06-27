@@ -7,12 +7,12 @@ const inputEl = document.querySelector(".search-field");
 const cityName = document.querySelector(".city-name");
 const currentLoc = document.querySelector(".location");
 const iconEl = document.querySelector(".icon-title");
-const temperatureEL = document.querySelector(".text-title");
+const temperatureEl = document.querySelector(".text-title");
 const divEl = document.querySelector(".wrapper");
 const tempCel = document.querySelector(".tempC");
 const tempFahr = document.querySelector(".tempF");
 
-
+console.log(temperatureEl);
 formEl.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
@@ -28,7 +28,7 @@ function onFormSubmit(event) {
 function showWeather(response) {
   cityName.innerHTML = response.data.name;
   let temp = Math.round(response.data.main.temp);
-  temperatureEL.innerHTML = temp;
+  temperatureEl.innerHTML = temp;
   let description = response.data.weather[0].description;
   if (description === 'snow') {
     iconEl.innerHTML = "❄️";
@@ -67,7 +67,7 @@ function showWeather(response) {
 
   tempFahr.addEventListener("click", (event) => {
     event.preventDefault();
-    temperatureEL.innerHTML = tempF;
+    temperatureEl.innerHTML = tempF;
     tempCel.classList.remove('active');
     tempFahr.classList.add('active');
   });
