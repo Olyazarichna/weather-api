@@ -10,28 +10,30 @@ h2 {
 }
 
 .main-wrapper {
-  border: 1px solid grey;
+  border: 1px solid rgb(128, 128, 128);
   width: 520px;
   border-radius: 5px;
-}
-.container {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 30px;
 }
 
+
 form {
-  padding-top: 30px;
   display: flex;
   justify-content: space-between;
 }
+.listBtn{
+  display: flex;
+  justify-content: space-between;
+}
+.btn-items:last-child{
+  margin-left: 10px;
+}
 
 .search-field {
-  display: inline-block;
   padding: 6px;
   width: 200px;
-
   border-radius: 4px;
-  background-color: palegoldenrod;
+  background-color: rgb(231, 225, 165);
 }
 .search-field:focus {
   color: midnightblue;
@@ -44,13 +46,16 @@ input::placeholder {
 .search-btn {
   padding: 8px;
   width: 90px;
+  height: 35px;
   border-radius: 4px;
-  border: 1px solid green;
-  background-color: orange;
+  border: 1px solid rgb(0, 128, 0);
+  background-color: rgb(238, 157, 8);
 }
-.search-btn:hover {
+.search-btn:hover,
+.search-btn:focus  {
   cursor: pointer;
-  background-color: orangered;
+  background-color: rgb(214, 63, 8);
+  color: #fff;
 }
 .city-name {
   font-size: 48px;
@@ -68,10 +73,6 @@ input::placeholder {
   padding-left: 10px;
 }
 
-.title {
-  font-size: 20px;
-  color: #fff;
-}
 
 .tempC,
 .tempF {
@@ -80,5 +81,19 @@ input::placeholder {
 .wind {
   font-size: 18px;
   font-weight: 500;
-  padding-bottom: 30px;
+}
+.active{
+  font-weight: 900;
+  color: rgb(238, 157, 8);
+}
+.desc-list{
+  font-size: 16px;
+}
+.desc-list:not(:first-child){
+  margin-top: 4px;
+}
+
+.bottom-title{
+  margin-top: 20px;
+
 }

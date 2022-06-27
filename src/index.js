@@ -51,15 +51,21 @@ function showWeather(response) {
 
   let tempF = Math.round((temp * 9) / 5 + 32);
   console.count(tempF);
+ 
 
   tempFahr.addEventListener("click", (event) => {
     event.preventDefault();
     temperature.innerHTML = tempF;
+    tempCel.classList.remove('active');
+    tempFahr.classList.add('active');
   });
 
   tempCel.addEventListener("click", (event) => {
     event.preventDefault();
     temperature.innerHTML = temp;
+    tempFahr.classList.remove('active');
+    tempCel.classList.add('active');
+
   });
 }
 
@@ -109,23 +115,5 @@ function setTime() {
   day = days[day];
   let time = `${day} ${hours}:${minutes}`;
   const timeEl = document.querySelector(".time");
-  timeEl.innerHTML = `Last updated: ${time}</p>`;
+  timeEl.innerHTML = `Last updated: ${time}`;
 }
-
-// // let tempC = 17;
-// // let tempF = Math.round((tempC * 9) / 5 + 32);
-
-// const refs = {
-//   tempCel: document.querySelector('.tempC'),
-//   tempFahr: document.querySelector('.tempF'),
-
-// }
-// refs.tempFahr.addEventListener("click", (event) =>{
-//   event.preventDefault();
-//   temperature.innerHTML = tempF;
-// });
-
-// refs.tempCel.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   temperature.innerHTML = tempC;
-// });
