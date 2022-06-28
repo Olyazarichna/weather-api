@@ -84,6 +84,7 @@ function searchCity(city) {
 }
 
 searchCity("Kyiv");
+displayForecast();
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
@@ -108,4 +109,25 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   let time = `${day} ${hours}:${minutes}`;
   return `Last updated: ${time}`;
+}
+
+
+function displayForecast() {
+  let forecastEl = document.querySelector('.weather-forecast');
+  forecastEl.innerHTML = ` <div class="row">
+  <div class="col-2">
+      <div class="weather-forecast-date">Thu</div>
+    <img
+      src="http://openweathermap.org/img/wn/50d@2x.png"
+      alt=""
+      width="42"
+    />
+    <div class="weather-forecast-temperatures">
+      <span class="max"> 18° </span>
+      <span class="min"> 12° </span>
+    </div>
+
+  </div>
+
+</div>`;
 }

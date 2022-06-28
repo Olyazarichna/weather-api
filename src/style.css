@@ -8,13 +8,21 @@ p,
 h2 {
   margin: 0;
 }
+.wrapper{
+  margin: 15px 400px;
 
+
+}
+.container{
+  padding: 0;
+}
 .main-wrapper {
   border: 1px solid rgb(128, 128, 128);
-  width: 520px;
+  width: 560px;
   border-radius: 5px;
   padding: 30px;
 }
+
 
 
 form {
@@ -65,13 +73,7 @@ input::placeholder {
   line-height: 1.33;
 }
 
-.wrapper {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
+
 .info{
   position: relative;
   display: flex;
@@ -81,8 +83,8 @@ input::placeholder {
 .temp-list{
   display: flex;
   position: absolute;
-  top:27px;
-  left: 136px;
+  top: 35px;
+  left: 145px;
 
 }
 .temp-wrap{
@@ -126,9 +128,28 @@ input::placeholder {
 
 .bottom-title{
   margin-top: 20px;
+  font-size: 20px;
 
 }
 .descritpion::first-letter{
   text-transform: uppercase;
 
+}
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
