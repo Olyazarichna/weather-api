@@ -47,7 +47,7 @@ function showWeather(response) {
 
   descriptionEl.innerHTML = description;
   windEl.innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
-  humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
   let tempF = Math.round((temp * 9) / 5 + 32);
 
