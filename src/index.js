@@ -1,5 +1,4 @@
 // const axios = require('axios').default;
-
 const key = "a98d70d03d8de2cdd126f4062901ce92";
 
 const formEl = document.querySelector(".form");
@@ -40,33 +39,30 @@ function showWeather(response) {
   const humidity = document.querySelector(".humidity");
   const descriptionEl = document.querySelector(".descritpion");
   cityName.innerHTML = response.data.name;
- 
-//time
-const timeEl = document.querySelector(".time");
+
+  //time
+  const timeEl = document.querySelector(".time");
   timeEl.innerHTML = formatDate(response.data.dt * 1000);
 
-  
   descriptionEl.innerHTML = description;
   windEl.innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
 
   let tempF = Math.round((temp * 9) / 5 + 32);
   console.count(tempF);
- 
 
   tempFahr.addEventListener("click", (event) => {
     event.preventDefault();
     temperatureEl.innerHTML = tempF;
-    tempCel.classList.remove('active');
-    tempFahr.classList.add('active');
+    tempCel.classList.remove("active");
+    tempFahr.classList.add("active");
   });
 
   tempCel.addEventListener("click", (event) => {
     event.preventDefault();
     temperatureEl.innerHTML = temp;
-    tempFahr.classList.remove('active');
-    tempCel.classList.add('active');
-
+    tempFahr.classList.remove("active");
+    tempCel.classList.add("active");
   });
 }
 
@@ -91,18 +87,18 @@ function searchCity(city) {
 
 searchCity("Kyiv");
 
-function formatDate(timestamp){
+function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
-    if (hours < 10) {
+  if (hours < 10) {
     hours = `0${hours}`;
   }
 
   let minutes = date.getMinutes();
-    if (minutes < 10) {
+  if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-    let days = [
+  let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -114,4 +110,4 @@ function formatDate(timestamp){
   let day = days[date.getDay()];
   let time = `${day} ${hours}:${minutes}`;
   return `Last updated: ${time}`;
-};
+}
