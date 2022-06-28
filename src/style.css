@@ -9,16 +9,12 @@ h2 {
   margin: 0;
 }
 .wrapper{
-  margin: 15px 400px;
-
-
+  margin-top: 15px;
 }
-.container{
-  padding: 0;
-}
+
 .main-wrapper {
   border: 1px solid rgb(128, 128, 128);
-  width: 560px;
+  max-width: 600px;
   border-radius: 5px;
   padding: 30px;
 }
@@ -151,4 +147,11 @@ input::placeholder {
 
 .weather-forecast-temperatures {
   font-size: 13px;
+}
+
+.main-wrapper.bottom{
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+
 }

@@ -20,8 +20,7 @@
 
   <body>
     <div class="wrapper">
-      <div class="main-wrapper">
-        <div class="container">
+      <div class="container main-wrapper">
           <form class="form">
             <input class="search-field" type="text" placeholder="Search" />
             <ul class="listBtn">
@@ -35,7 +34,6 @@
               </li>
             </ul>
           </form>
-        </div>
         <h2 class="city-name"></h2>
         <div class="info">
           <div class="temp-wrap">
@@ -64,13 +62,17 @@
         </div>
 
         <div class="weather-forecast"></div>
+        
       </div>
-      <small>
+      <div class="main-wrapper bottom">
+           <small>
         <a href="https://github.com/Olyazarichna/weather-api" target="_blank"
           >Open-source code</a
         >
         by Olya Zarichna
       </small>
+      </div>
+     
     </div>
     <script src="./src/index.js"></script>
   </body>
