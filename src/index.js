@@ -6,7 +6,7 @@ const formEl = document.querySelector(".form");
 const inputEl = document.querySelector(".search-field");
 const cityName = document.querySelector(".city-name");
 const currentLoc = document.querySelector(".location");
-const iconEl = document.querySelector(".icon-title");
+const iconEl = document.querySelector(".icon");
 const temperatureEl = document.querySelector(".text-title");
 const divEl = document.querySelector(".wrapper");
 const tempCel = document.querySelector(".tempC");
@@ -30,34 +30,23 @@ function showWeather(response) {
   let temp = Math.round(response.data.main.temp);
   temperatureEl.innerHTML = temp;
   let description = response.data.weather[0].description;
-  if (description === 'snow') {
-    iconEl.innerHTML = "❄️";
-  }  else if (description === 'clouds') {
-    iconEl.innerHTML = "🌥";
-  }   else if (description === 'clear') {
-    iconEl.innerHTML = "☀️";
-  } else if (description === 'rain') {
-    iconEl.innerHTML = "🌧";
-  }else if (description === 'thunderstorm') {
-    iconEl.innerHTML = "⛈";
-  }else if (description === 'clear sky') {
-    iconEl.innerHTML = "☀️";
-  }else if (description === ' scattered clouds') {
-    iconEl.innerHTML = "☁️";
-  } else if (description === 'overcast clouds') {
-    iconEl.innerHTML = "☁️";
-  } else {
-    iconEl.innerHTML = "🌥";
-  }
+  iconEl.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconEl.setAttribute("alt", response.data.weather[0].description);
 
   const windEl = document.querySelector(".wind");
   const humidity = document.querySelector(".humidity");
   const descriptionEl = document.querySelector(".descritpion");
   cityName.innerHTML = response.data.name;
-  setTime();
+ 
+//time
+const timeEl = document.querySelector(".time");
+  timeEl.innerHTML = formatDate(response.data.dt * 1000);
 
   
-  descriptionEl.innerHTML = description.toUpperCase();
+  descriptionEl.innerHTML = description;
   windEl.innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
 
@@ -102,8 +91,18 @@ function searchCity(city) {
 
 searchCity("Kyiv");
 
-function setTime() {
-  let days = [
+function formatDate(timestamp){
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+    if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  let minutes = date.getMinutes();
+    if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+    let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -112,20 +111,7 @@ function setTime() {
     "Friday",
     "Saturday",
   ];
-
-  let currentTime = new Date();
-  let day = currentTime.getDay();
-  let hours = currentTime.getHours();
-  let minutes = currentTime.getMinutes();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  day = days[day];
+  let day = days[date.getDay()];
   let time = `${day} ${hours}:${minutes}`;
-  const timeEl = document.querySelector(".time");
-  timeEl.innerHTML = `Last updated: ${time}`;
-}
+  return `Last updated: ${time}`;
+};

@@ -67,26 +67,30 @@ input::placeholder {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 .info{
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+   align-items: center;
 }
 .temp-list{
   display: flex;
   position: absolute;
-  top:25px;
-  right: -50px;
+  top:27px;
+  left: 136px;
+
 }
-.icon-title,
-.text-title {
-  font-size: 30px;
-  padding-left: 10px;
+.temp-wrap{
+  display: flex;
 }
 
+.text-title {
+  font-size: 56px;
+  padding-left: 10px;
+}
 
 .tempC,
 .tempF {
@@ -100,18 +104,21 @@ input::placeholder {
   font-weight: 900;
   color: rgb(238, 157, 8);
 }
-/* .desc {
-margin-left: 50px;
-} */
-
-.desc-list{
-  font-size: 16px;
+.desc{
+ 
+  font-size: 18px;
+  font-weight: 500;;
 }
+
 .desc-list:not(:first-child){
   margin-top: 4px;
 }
 
 .bottom-title{
   margin-top: 20px;
+
+}
+.descritpion::first-letter{
+  text-transform: uppercase;
 
 }
