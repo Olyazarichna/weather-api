@@ -11,7 +11,6 @@ const divEl = document.querySelector(".wrapper");
 const tempCel = document.querySelector(".tempC");
 const tempFahr = document.querySelector(".tempF");
 
-console.log(temperatureEl);
 formEl.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
@@ -49,7 +48,6 @@ function showWeather(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
 
   let tempF = Math.round((temp * 9) / 5 + 32);
-  console.count(tempF);
 
   tempFahr.addEventListener("click", (event) => {
     event.preventDefault();
