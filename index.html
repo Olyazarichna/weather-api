@@ -5,87 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous"
-  /> 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/src/style.css" />
-   
+
     <title>Weather</title>
   </head>
 
   <body>
-      <div class="wrapper">
-    <!-- <h1>
-      Hosted with a
-      <a
-        href="
-        https://www.netlify.com"
-        >Netlify</a
-      >
-    </h1> -->
-    
-        <div class="main-wrapper">
+    <div class="wrapper">
+      <div class="main-wrapper">
+        <div class="container">
+          <form class="form">
+            <input class="search-field" type="text" placeholder="Search" />
+            <ul class="listBtn">
+              <li class="btn-items">
+                <button class="search-btn" type="submit">Search 🔍</button>
+              </li>
+              <li class="btn-items">
+                <button class="search-btn location" type="submit">
+                  Current
+                </button>
+              </li>
+            </ul>
+          </form>
+        </div>
+        <h2 class="city-name"></h2>
+        <div class="info">
+          <div class="temp-wrap">
+            <img src="" alt="" class="icon" width="64" height="64" />
+            <p class="text-title"></p>
+            <ul class="temp-list">
+              <li><p class="tempC active">&degC |</p></li>
+              <li><p class="tempF">&degF</p></li>
+            </ul>
+          </div>
 
-
-      
-      <div class="container">
-        <form class="form">
-          <input class="search-field" type="text" placeholder="Search" />
-          <ul class="listBtn">
-            <li class="btn-items">
-              <button class="search-btn" type="submit">Search 🔍</button>
+          <ul class="desc">
+            <li class="desc-list">
+              <p class="time"></p>
             </li>
-            <li class="btn-items">
-              <button class="search-btn location" type="submit">Current</button>
+            <li class="desc-list">
+              <p class="descritpion"></p>
             </li>
-          </ul>
-        </form>
-      </div>
-      <h2 class="city-name"></h2>
-      <div class="info">
-        <div class="temp-wrap">
-          <img src="" alt="" class="icon" width="64" height="64" />
-          <p class="text-title"></p>
-          <ul class="temp-list">
-            <li><p class="tempC active">&degC |</p></li>
-            <li><p class="tempF">&degF</p></li>
+            <li class="desc-list">
+              <p class="wind"></p>
+            </li>
+            <li class="desc-list">
+              <p class="humidity"></p>
+            </li>
           </ul>
         </div>
 
-        <ul class="desc">
-          <li class="desc-list">
-            <p class="time"></p>
-          </li>
-          <li class="desc-list">
-            <p class="descritpion"></p>
-          </li>
-          <li class="desc-list">
-            <p class="wind"></p>
-          </li>
-          <li class="desc-list">
-            <p class="humidity"></p>
-          </li>
-        </ul>
+        <div class="weather-forecast"></div>
       </div>
-
-      <div class="weather-forecast">
-         
-
-
-      </div>
+      <small>
+        <a href="https://github.com/Olyazarichna/weather-api" target="_blank"
+          >Open-source code</a
+        >
+        by Olya Zarichna
+      </small>
     </div>
-         <small>
-      <a href="https://github.com/Olyazarichna/weather-api" target="_blank"
-        >Open-source code</a
-      >
-      by Olya Zarichna
-         </small>
-    </div>
-    
-   
     <script src="/src/index.js"></script>
   </body>
 </html>

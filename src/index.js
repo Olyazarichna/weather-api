@@ -1,4 +1,4 @@
-// const axios = require('axios').default;
+const axios = require('axios').default;
 const key = "a98d70d03d8de2cdd126f4062901ce92";
 
 const formEl = document.querySelector(".form");
